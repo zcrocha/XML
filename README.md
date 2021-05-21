@@ -1,2 +1,2 @@
-# XML
- Tratando um arquivo XML com Python.
+# XML - Código simples
+ - Tratando um arquivo XML com Python.
