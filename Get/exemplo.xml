@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/styles/StreamStreams.xsl"?>
+<MTConnectStreams xmlns:m="urn:mtconnect.org:MTConnectStreams:1.4" xmlns="urn:mtconnect.org:MTConnectStreams:1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="urn:hypertherm.com:PlasmaStreams:1.0" xsi:schemaLocation="urn:hypertherm.com:PlasmaStreams:1.0 /schemas/PlasmaStreams_1.0">
+	<Header creationTime="2021-05-18T16:19:15Z" sender="EDGE-0221110201" instanceId="1621353732" version="1.5.0.14" bufferSize="131072" nextSequence="69" firstSequence="1" lastSequence="68" />
+	<Streams>
+		<DeviceStream name="EdgeConnectCuttingSystem" uuid="0221110201">
+			<ComponentStream component="Device" name="EdgeConnectCuttingSystem" componentId="edgeconnectcuttingsystem">
+				<Events>
+					<Availability dataItemId="avail" timestamp="2021-05-18T16:03:08.3493954Z" name="avail" sequence="24">
+						AVAILABLE
+					</Availability>
+					<AssetChanged dataItemId="edgeconnectcuttingsystem_asset_chg" timestamp="2021-05-18T16:03:16.738780Z" sequence="42" assetType="ProcessInformation">
+						id:1003-80Amp O2/Air-5/18/2021 12:03:16 PM
+					</AssetChanged>
+					<AssetRemoved dataItemId="edgeconnectcuttingsystem_asset_rem" timestamp="2021-05-18T16:02:12.970872Z" sequence="5" assetType="">
+						UNAVAILABLE
+					</AssetRemoved>
+				</Events>
+			</ComponentStream>
+			<ComponentStream component="Path" componentId="partexecution">
+				<Events>
+					<Execution dataItemId="executestatus" timestamp="2021-05-18T16:08:11.8266398Z" sequence="66">
+						PROGRAM_STOPPED
+					</Execution>
+					<Message dataItemId="jobstatusmessage" timestamp="2021-05-18T16:03:08.3493954Z" sequence="31" />
+					<LineNumber dataItemId="line" timestamp="2021-05-18T16:03:08.3493954Z" sequence="30">
+						0
+					</LineNumber>
+				</Events>
+				<Condition>
+					<Normal dataItemId="executeerror" timestamp="2021-05-18T16:03:08.3493954Z" sequence="36" type="MOTION_PROGRAM" />
+				</Condition>
+			</ComponentStream>
+			<ComponentStream component="Controller" name="Phoenix" componentId="phoenix">
+				<Events>
+					<Message dataItemId="cncstatusmessage" timestamp="2021-05-18T16:08:12.1976884Z" sequence="67" />
+					<EdgeConnectCutMode dataItemId="cutmode" timestamp="2021-05-18T16:07:45.9059388Z" sequence="56">
+						PLASMA
+					</EdgeConnectCutMode>
+					<Program dataItemId="nestguid" timestamp="2021-05-18T16:03:08.3493954Z" sequence="28">
+						UNAVAILABLE:PRONEST CNC NEST
+					</Program>
+					<Program dataItemId="partname" timestamp="2021-05-18T16:03:08.3493954Z" sequence="27">
+						PRONEST CNC NEST
+					</Program>
+				</Events>
+			</ComponentStream>
+			<ComponentStream component="PlasmaTool" name="Xpr1" componentId="xpr1">
+				<Samples>
+					<EquipmentTimer dataItemId="xpr1_arc_time" timestamp="2021-05-18T16:03:16.7568056Z" sequence="45" subType="OPERATING">
+						245
+					</EquipmentTimer>
+				</Samples>
+				<Events>
+					<PlasmaProcessDescription dataItemId="xpr1_process_description" timestamp="2021-05-18T16:03:16.7397801Z" sequence="44">
+						80AMP O2/AIR
+					</PlasmaProcessDescription>
+					<PlasmaProcessRecordId dataItemId="xpr1_process_id" timestamp="2021-05-18T16:03:16.7397801Z" sequence="43">
+						1003
+					</PlasmaProcessRecordId>
+					<PlasmaToolState dataItemId="xpr1_state" timestamp="2021-05-18T16:08:15.5617681Z" sequence="68">
+						WAIT FOR START
+					</PlasmaToolState>
+				</Events>
+				<Condition>
+					<Normal dataItemId="xpr1_active_errors" timestamp="2021-05-18T16:07:57.3860453Z" sequence="61" type="SYSTEM" />
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:03:19.7583114Z" sequence="48" nativeCode="642@121407" nativeSeverity="Info" type="SYSTEM">
+						System powered
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:03:19.7603159Z" sequence="49" nativeCode="646@121396" nativeSeverity="Info" type="SYSTEM">
+						System turned off
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:03:19.7713305Z" sequence="50" nativeCode="647@121176" nativeSeverity="Info" type="SYSTEM">
+						Process selected - id:1003
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:03:19.7723330Z" sequence="51" nativeCode="647@121169" nativeSeverity="Info" type="SYSTEM">
+						Process selected - id:8001
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:03:19.7733340Z" sequence="52" nativeCode="647@121095" nativeSeverity="Info" type="SYSTEM">
+						Process selected - id:1003
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:03:19.7743334Z" sequence="53" nativeCode="643@120561" nativeSeverity="Info" type="SYSTEM">
+						No process loaded
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:03:19.7763405Z" sequence="54" nativeCode="642@120554" nativeSeverity="Info" type="SYSTEM">
+						System powered
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:03:19.7773419Z" sequence="55" nativeCode="645@110240" nativeSeverity="Info" type="SYSTEM">
+						System is off
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:07:58.1226441Z" sequence="62" nativeCode="642@123739" nativeSeverity="Info" type="SYSTEM">
+						System powered
+					</Warning>
+					<Warning dataItemId="xpr1_error_history" timestamp="2021-05-18T16:07:58.1236476Z" sequence="63" nativeCode="646@121527" nativeSeverity="Info" type="SYSTEM">
+						System turned off
+					</Warning>
+				</Condition>
+			</ComponentStream>
+			<ComponentStream component="PlasmaTool" name="Xpr2" componentId="xpr2">
+				<Samples>
+					<EquipmentTimer dataItemId="xpr2_arc_time" timestamp="2021-05-18T16:02:12.970872Z" sequence="19" subType="OPERATING">
+						UNAVAILABLE
+					</EquipmentTimer>
+				</Samples>
+				<Events>
+					<PlasmaProcessDescription dataItemId="xpr2_process_description" timestamp="2021-05-18T16:02:12.970872Z" sequence="21">
+						UNAVAILABLE
+					</PlasmaProcessDescription>
+					<PlasmaProcessRecordId dataItemId="xpr2_process_id" timestamp="2021-05-18T16:02:12.970872Z" sequence="22">
+						UNAVAILABLE
+					</PlasmaProcessRecordId>
+					<PlasmaToolState dataItemId="xpr2_state" timestamp="2021-05-18T16:02:12.970872Z" sequence="23">
+						UNAVAILABLE
+					</PlasmaToolState>
+				</Events>
+				<Condition>
+					<Unavailable dataItemId="xpr2_active_errors" timestamp="2021-05-18T16:02:12.970872Z" sequence="18" type="SYSTEM" />
+					<Unavailable dataItemId="xpr2_error_history" timestamp="2021-05-18T16:02:12.970872Z" sequence="20" type="SYSTEM" />
+				</Condition>
+			</ComponentStream>
+		</DeviceStream>
+	</Streams>
+</MTConnectStreams>
