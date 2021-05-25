@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MTConnectDevices xmlns:m="urn:mtconnect.org:MTConnectDevices:1.4" xmlns="urn:mtconnect.org:MTConnectDevices:1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="urn:hypertherm.com:PlasmaDevices:1.0" xsi:schemaLocation="urn:hypertherm.com:PlasmaDevices:1.0 /schemas/PlasmaDevices_1.0       urn:mtconnect.org:MTConnectDevices:1.4 /schemas/MTConnectDevices_1.4">
+    <Header creationTime="2021-05-21T20:05:08Z" sender="EDGE-0221110200" instanceId="1621619538" version="1.5.0.14" assetBufferSize="1024" assetCount="6" bufferSize="131072">
+        <AssetCounts>
+            <AssetCount assetType="PlasmaTool">1</AssetCount>
+            <AssetCount assetType="ProcessInformation">5</AssetCount>
+        </AssetCounts>
+    </Header>
+    <Devices>
+        <Device id="edgeconnectcuttingsystem" name="EdgeConnectCuttingSystem" uuid="0221110200">
+            <Description manufacturer="Hypertherm" serialNumber="0221110200" />
+            <DataItems>
+                <DataItem category="EVENT" id="avail" name="avail" type="AVAILABILITY" />
+                <DataItem category="EVENT" id="edgeconnectcuttingsystem_asset_chg" type="ASSET_CHANGED" />
+                <DataItem category="EVENT" id="edgeconnectcuttingsystem_asset_rem" type="ASSET_REMOVED" />
+            </DataItems>
+            <Components>
+                <Controller id="phoenix" name="Phoenix">
+                    <DataItems>
+                        <DataItem category="EVENT" id="cutmode" type="p:EDGE_CONNECT_CUT_MODE" />
+                        <DataItem category="EVENT" id="partname" type="PROGRAM" />
+                        <DataItem category="EVENT" id="nestguid" type="PROGRAM" />
+                        <DataItem category="EVENT" id="cncstatusmessage" type="MESSAGE" />
+                    </DataItems>
+                    <Components>
+                        <Path id="partexecution">
+                            <DataItems>
+                                <DataItem category="EVENT" id="executestatus" type="EXECUTION" />
+                                <DataItem category="EVENT" id="line" type="LINE_NUMBER" />
+                                <DataItem category="CONDITION" id="executeerror" type="MOTION_PROGRAM" />
+                                <DataItem category="EVENT" id="jobstatusmessage" type="MESSAGE" />
+                            </DataItems>
+                        </Path>
+                    </Components>
+                </Controller>
+                <p:PlasmaTool id="xpr1" name="Xpr1">
+                    <Description manufacturer="Hypertherm" serialNumber="Undefined">
+						Hypertherm XPR-series plasma system
+					</Description>
+                    <DataItems>
+                        <DataItem category="EVENT" id="xpr1_state" type="p:PLASMA_TOOL_STATE" />
+                        <DataItem category="EVENT" id="xpr1_process_id" type="p:PLASMA_PROCESS_RECORD_ID" />
+                        <DataItem category="EVENT" id="xpr1_process_description" type="p:PLASMA_PROCESS_DESCRIPTION" />
+                        <DataItem category="SAMPLE" id="xpr1_arc_time" nativeUnits="SECOND" subType="OPERATING" type="EQUIPMENT_TIMER" units="SECOND" />
+                        <DataItem category="CONDITION" id="xpr1_active_errors" type="SYSTEM" />
+                        <DataItem category="CONDITION" id="xpr1_error_history" type="SYSTEM" />
+                    </DataItems>
+                </p:PlasmaTool>
+                <p:PlasmaTool id="xpr2" name="Xpr2">
+                    <Description manufacturer="Hypertherm" serialNumber="Undefined">
+						Hypertherm XPR-series plasma system
+					</Description>
+                    <DataItems>
+                        <DataItem category="EVENT" id="xpr2_state" type="p:PLASMA_TOOL_STATE" />
+                        <DataItem category="EVENT" id="xpr2_process_id" type="p:PLASMA_PROCESS_RECORD_ID" />
+                        <DataItem category="EVENT" id="xpr2_process_description" type="p:PLASMA_PROCESS_DESCRIPTION" />
+                        <DataItem category="SAMPLE" id="xpr2_arc_time" nativeUnits="SECOND" subType="OPERATING" type="EQUIPMENT_TIMER" units="SECOND" />
+                        <DataItem category="CONDITION" id="xpr2_active_errors" type="SYSTEM" />
+                        <DataItem category="CONDITION" id="xpr2_error_history" type="SYSTEM" />
+                    </DataItems>
+                </p:PlasmaTool>
+            </Components>
+        </Device>
+    </Devices>
+</MTConnectDevices>
