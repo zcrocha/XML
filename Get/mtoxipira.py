@@ -17,17 +17,19 @@ a = True
 
 while a:
 
+    """    # Busca o arquivo local xml
+        tree = ET.parse('teste.xml')
+        root = tree.getroot()"""
+
     # Busca o XML externo
-    """url = "https://www.w3schools.com/xml/note.xml"
+    url = "http://mtconnect.mazakcorp.com:5609"
     header = {'Accept': 'application/xml'}
     r = requests.get(url, headers=header)
 
     tree = ET.ElementTree(ET.fromstring(r.content))
-    root=tree.getroot()"""
+    root=tree.getroot()
 
-    # Busca o arquivo local xml
-    tree = ET.parse('teste.xml')
-    root = tree.getroot()
+
 
     # Percorre pelo arquivo XML inteiro
     for el in root.findall('.//*'):
