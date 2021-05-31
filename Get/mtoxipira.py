@@ -7,6 +7,12 @@ import time
 # Permite que seja possível se conectar a um XML externo
 import requests
 
+# Pausa de 10 minutos (600seg)
+
+"""tempoDeExecucao = int(input("Digite o intervalo de tempo para consumo desses dados: "))"""
+
+tempoDeExecucao = 300
+
 a = True
 
 while a:
@@ -58,6 +64,6 @@ while a:
             print("Dados Relevantes: \n".center(50))
             print(f" Id: {id}; Categoria: {category}; Tipo: {type}; \n".center(50))
 
-    # Pausa de 10 minutos (600seg)
-    time.sleep(600)
+
+    time.sleep(tempoDeExecucao)
 
