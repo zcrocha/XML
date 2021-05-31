@@ -20,7 +20,13 @@ root=tree.getroot()
 for el in root.findall('.//*'):
 
     # Filtro de busca para encontrar uma tag específica
-    # ----------------- Jeito certo ------------------------------- Jeito errado ------------
+    if el.tag.find('Header') != -1 and el.tag.find('Headeer') == -1:
+
+        creationTime=el.get('creationTime')
+
+        print("\n\nTempo de criação: ", creationTime)
+
+
     if el.tag.find('PlasmaTool') != -1 and el.tag.find('PlasmaTooll') == -1:
 
         id=el.get('id')
@@ -28,6 +34,7 @@ for el in root.findall('.//*'):
 
         print("\n\nPlasmaTool id: ", id)
         print("\nPlasmaTool name: ", name)
+
 
     if el.tag.find('Description') != -1 and el.tag.find('Descriptionn') == -1:
 
