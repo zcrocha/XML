@@ -1,24 +1,31 @@
-# Importa a lib que trata o arquivo XML
 import xml.etree.ElementTree as ET
-
-#Delay
 import time
-
-# Permite que seja possível se conectar a um XML externo
 import requests
+import sys
+import os
 
-# Pausa de 10 minutos (600seg)
-
+# Pausa de 5 minutos (300seg)
 """tempoDeExecucao = int(input("Digite o intervalo de tempo para consumo desses dados: "))"""
 
-tempoDeExecucao = 300
 
-a = True
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 
-while a:
 
-    """    # Busca o arquivo local xml
-        tree = ET.parse('teste.xml')
+while 1:
+
+    # Verifica o arquivo de texto
+    arquivo = open('ConfigMtOxipira.txt', 'r')
+    fraseDeExibicao = arquivo.readline()
+    tempoDeExecucao = arquivo.readline()
+    # -------------------------------------------------------------------
+    arquivo = open('ConfigMtOxipira.txt', 'w')
+    arquivo.write("Tempo de execução em segundos (300 = 5 minutos):\n")
+    arquivo.write(tempoDeExecucao)
+
+    """ # Busca o arquivo local xml
+        tree = ET.parse('device.xml')
         root = tree.getroot()"""
 
     # Busca o XML externo
@@ -62,10 +69,18 @@ while a:
             category = el.get('category')
             type = el.get('type')
 
+
             print("-" * 150)
             print("Dados Relevantes: \n".center(50))
             print(f" Id: {id}; Categoria: {category}; Tipo: {type}; \n".center(50))
 
+    #Verifica se o tempo de execução está vazio
+    if(len(tempoDeExecucao) == 0):
+        tempoDeExecucao = "300"
+        arquivo.write(tempoDeExecucao)
 
-    time.sleep(tempoDeExecucao)
+
+    arquivo.close()
+    time.sleep(int(tempoDeExecucao))
+
 
