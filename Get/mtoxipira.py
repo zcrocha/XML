@@ -24,55 +24,65 @@ while 1:
     arquivo.write("Tempo de execução em segundos (300 = 5 minutos):\n")
     arquivo.write(tempoDeExecucao)
 
-    """ # Busca o arquivo local xml
-        tree = ET.parse('device.xml')
-        root = tree.getroot()"""
-
     # Busca o XML externo
-    url = "http://mtconnect.mazakcorp.com:5609"
+    """url = "http://mtconnect.mazakcorp.com:5609"
     header = {'Accept': 'application/xml'}
     r = requests.get(url, headers=header)
 
     tree = ET.ElementTree(ET.fromstring(r.content))
-    root=tree.getroot()
+    root=tree.getroot()"""
 
-
+    # Busca o arquivo local xml
+    tree = ET.parse('device.xml')
+    root = tree.getroot()
 
     # Percorre pelo arquivo XML inteiro
     for el in root.findall('.//*'):
 
         # Filtro de busca para encontrar uma tag específica
         if el.tag.find('Header') != -1 and el.tag.find('Headeer') == -1:
-            creationTime = el.get('creationTime')
+            sender = el.get('sender')
+            version = el.get('version')
 
-            print("\n\nTempo de criação: ", creationTime)
-
-        if el.tag.find('PlasmaTool') != -1 and el.tag.find('PlasmaTooll') == -1:
-            id = el.get('id')
-            name = el.get('name')
-
-            print("\n\nPlasmaTool id: ", id)
-            print("\nPlasmaTool name: ", name)
-
-        if el.tag.find('Description') != -1 and el.tag.find('Descriptionn') == -1:
-            manufacturer = el.get('manufacturer')
-            serialNumber = el.get('serialNumber')
-
-            print("\nManufacturer: ", manufacturer)
-            print("\nSerialNumber: ", serialNumber)
-
-            # Texto entre a tag
-            print("\nTipo de máquina de corte : ", el.text)
+            print(f"\nSender: {sender}")
+            print(f"Version: {version}")
 
         if el.tag.find('DataItem') != -1 and el.tag.find('DataItemm') == -1:
             id = el.get('id')
-            category = el.get('category')
             type = el.get('type')
+            subType = el.get('subType')
 
+            if id == 'avail':
+                print(f"\nDisponibilidade da máquina: {type}")
 
-            print("-" * 150)
-            print("Dados Relevantes: \n".center(50))
-            print(f" Id: {id}; Categoria: {category}; Tipo: {type}; \n".center(50))
+            elif id == 'cutmode':
+                print("-" * 150)
+                print(f"Modo de corte (cutmode): {type}")
+
+            elif id == 'partname':
+                print(f"PartName: {type}")
+
+            elif id == 'executestatus':
+                print(f"Execute Status: {type}")
+
+            elif id == 'executeerror':
+                print(f"Execute Error: {type}")
+
+            elif id == 'jobstatusmessage':
+                print(f"Job Status Message: {type}")
+                print("-" * 150)
+
+            elif id == 'xpr1_state':
+                print(f"\nxpr1_state: {type}")
+
+            elif id == 'xpr1_process_id':
+                print(f"xpr1_process_id: {type}")
+
+            elif id == 'xpr1_process_description':
+                print(f"xpr1_process_description: {type}")
+
+            elif id == 'xpr1_arc_time':
+                print(f"xpr1_arc_time: {type} --> {subType}")
 
     #Verifica se o tempo de execução está vazio
     if(len(tempoDeExecucao) == 0):
