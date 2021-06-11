@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/styles/StreamStreams.xsl"?>
+<mtconnectstreams xmlns="urn:mtconnect.org:MTConnectStreams:1.4" xmlns:m="urn:mtconnect.org:MTConnectStreams:1.4" xmlns:p="urn:hypertherm.com:PlasmaStreams:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="urn:hypertherm.com:PlasmaStreams:1.0 /schemas/PlasmaStreams_1.0">
+	<header buffersize="131072" creationtime="2021-06-11T01:38:22Z" firstsequence="1" instanceid="1623368310" lastsequence="43" nextsequence="44" sender="EDGE-0620109115" version="1.5.0.14">
+	</header>
+	<streams>
+		<devicestream name="EdgeConnectCuttingSystem" uuid="0620109115">
+			<componentstream component="Device" componentid="edgeconnectcuttingsystem" name="EdgeConnectCuttingSystem">
+				<events>
+					<availability dataitemid="avail" name="avail" sequence="33" timestamp="2021-06-10T23:39:49.3441637Z">
+						AVAILABLE
+					</availability>
+					<assetchanged assettype="" dataitemid="edgeconnectcuttingsystem_asset_chg" sequence="4" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</assetchanged>
+					<assetremoved assettype="" dataitemid="edgeconnectcuttingsystem_asset_rem" sequence="5" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</assetremoved>
+				</events>
+			</componentstream>
+			<componentstream component="Path" componentid="partexecution">
+				<events>
+					<execution dataitemid="executestatus" sequence="38" timestamp="2021-06-10T23:39:49.3441637Z">
+						READY
+					</execution>
+					<message dataitemid="jobstatusmessage" sequence="40" timestamp="2021-06-10T23:39:49.3441637Z">
+					</message>
+					<linenumber dataitemid="line" sequence="39" timestamp="2021-06-10T23:39:49.3441637Z">
+						0
+					</linenumber>
+				</events>
+				<condition>
+					<normal dataitemid="executeerror" sequence="41" timestamp="2021-06-10T23:39:49.3441637Z" type="MOTION_PROGRAM">
+					</normal>
+				</condition>
+			</componentstream>
+			<componentstream component="Controller" componentid="phoenix" name="Phoenix">
+				<events>
+					<message dataitemid="cncstatusmessage" sequence="43" timestamp="2021-06-10T23:40:25.1435941Z">
+					</message>
+					<edgeconnectcutmode dataitemid="cutmode" sequence="42" timestamp="2021-06-10T23:40:06.3366010Z">
+						TRIAL
+					</edgeconnectcutmode>
+					<program dataitemid="nestguid" sequence="37" timestamp="2021-06-10T23:39:49.3441637Z">
+						UNAVAILABLE:CONVEXTRAPEZOID.TXT
+					</program>
+					<program dataitemid="partname" sequence="36" timestamp="2021-06-10T23:39:49.3441637Z">
+						CONVEXTRAPEZOID.TXT
+					</program>
+				</events>
+			</componentstream>
+			<componentstream component="PlasmaTool" componentid="xpr1" name="Xpr1">
+				<samples>
+					<equipmenttimer dataitemid="xpr1_arc_time" sequence="13" subtype="OPERATING" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</equipmenttimer>
+				</samples>
+				<events>
+					<plasmaprocessdescription dataitemid="xpr1_process_description" sequence="15" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</plasmaprocessdescription>
+					<plasmaprocessrecordid dataitemid="xpr1_process_id" sequence="16" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</plasmaprocessrecordid>
+					<plasmatoolstate dataitemid="xpr1_state" sequence="17" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</plasmatoolstate>
+				</events>
+				<condition>
+					<unavailable dataitemid="xpr1_active_errors" sequence="12" timestamp="2021-06-10T23:38:30.304428Z" type="SYSTEM">
+					</unavailable>
+					<unavailable dataitemid="xpr1_error_history" sequence="14" timestamp="2021-06-10T23:38:30.304428Z" type="SYSTEM">
+					</unavailable>
+				</condition>
+			</componentstream>
+			<componentstream component="PlasmaTool" componentid="xpr2" name="Xpr2">
+				<samples>
+					<equipmenttimer dataitemid="xpr2_arc_time" sequence="19" subtype="OPERATING" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</equipmenttimer>
+				</samples>
+				<events>
+					<plasmaprocessdescription dataitemid="xpr2_process_description" sequence="21" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</plasmaprocessdescription>
+					<plasmaprocessrecordid dataitemid="xpr2_process_id" sequence="22" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</plasmaprocessrecordid>
+					<plasmatoolstate dataitemid="xpr2_state" sequence="23" timestamp="2021-06-10T23:38:30.304428Z">
+						UNAVAILABLE
+					</plasmatoolstate>
+				</events>
+				<condition>
+					<unavailable dataitemid="xpr2_active_errors" sequence="18" timestamp="2021-06-10T23:38:30.304428Z" type="SYSTEM">
+					</unavailable>
+					<unavailable dataitemid="xpr2_error_history" sequence="20" timestamp="2021-06-10T23:38:30.304428Z" type="SYSTEM">
+					</unavailable>
+				</condition>
+			</componentstream>
+		</devicestream>
+	</streams>
+</mtconnectstreams>

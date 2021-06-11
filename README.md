@@ -5,4 +5,5 @@
 
 - pip install aiohttp
 - pip3 install -r requirements.txt
+- pip install beautifulsoup4
 
