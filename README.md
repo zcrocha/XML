@@ -1,9 +1,3 @@
-# XML - Código simples
- - Tratando um arquivo XML com Python.
+# Imagens para uso externo
 
-- Run: python analysis.py
-
-- pip install aiohttp
-- pip3 install -r requirements.txt
-- pip install beautifulsoup4
-
+- Para substituir uma imagem, salve a nova imagem que irá substituir com o mesmo nome da que foi excluida.
